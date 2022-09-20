@@ -1,0 +1,26 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title">Cadastro de Pessoa</h4>
+        <button (click)="close()" type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div>
+            <label>Nome (obrigatorio)<strong>*</strong></label>
+            <input class="form-control" [(ngModel)]="pessoaForm.nome">
+        </div>
+        <div>
+            <label>Cpf (obrigatorio)<strong>*</strong></label>
+            <input class="form-control" type="text" maxlength="14" [(ngModel)]="pessoaForm.cpf" (ngModelChange)="formatarCpf()">
+        </div>
+        <div class="row calendario">
+            <label>Data de Nascimento (obrigatorio)<strong>*</strong></label>
+            <input class="col-md-12" type="date" [(ngModel)]="pessoaForm.dataNascimento">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline-dark" type="button" (click)="confirm()" [disabled]="!pessoaForm.nome || !pessoaForm.cpf || !pessoaForm.dataNascimento">
+                Salvar
+            </button>
+        </div>
+    </div>
+
+</div>

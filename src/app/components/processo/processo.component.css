@@ -1,0 +1,26 @@
+.processo {
+    margin: 10px 10px 10px 10px;
+    width: 100vh;
+    height: 100vh;
+}
+
+.dash-board {
+    padding: 5px 0px 30px 10px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.delete {
+    color: red;
+}
+
+.add {
+    font-size: large;
+    color: green;
+    cursor: pointer;
+}
+
+tr {
+    flex-wrap: nowrap!important;
+}

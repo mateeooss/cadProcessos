@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+svg {
+    cursor: pointer;
+}
+
+.search {
+    margin-left: 15px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.search-type {
+    width: 100%;
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 6px;
+}

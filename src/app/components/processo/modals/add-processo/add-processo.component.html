@@ -1,0 +1,39 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title">Cadastro de Processos</h4>
+        <button (click)="close()" type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div>
+            <label>Ano (obrigatorio)<strong>*</strong></label>
+            <input class="form-control" maxlength="4" [(ngModel)]="processoForm.ano">
+        </div>
+        <div>
+            <label>Pessoa (obrigatorio)<strong>*</strong></label>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle dropdown-pessoa" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{processoForm.pessoa ? processoForm.pessoa.nome : 'selecione'}}
+                </button>
+                <div class="dropdown-menu dropdown-label" aria-labelledby="dropdownMenuButton">
+                    <div class="" *ngFor="let pessoa of pessoaList" (click)="pessoaSelecionada(pessoa)">
+                        <label>{{pessoa.nome}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label>numeração (obrigatorio)<strong>*</strong></label>
+            <input class="form-control" type="number" [(ngModel)]="processoForm.numero">
+        </div>
+        <div>
+            <label>Descrição (obrigatorio)<strong>*</strong></label>
+            <textarea [(ngModel)]="processoForm.descricao" class="form-control text-area" rows="3"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline-dark" type="button" (click)="confirm()" [disabled]="!processoForm.ano || !processoForm.pessoa || !processoForm.descricao || !processoForm.numero">
+                Salvar
+            </button>
+        </div>
+    </div>
+
+</div>
